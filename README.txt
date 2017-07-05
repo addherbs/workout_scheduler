@@ -18,3 +18,5 @@ de.create_all()
 
 
 ==> if no errors
+Then all the classes that are there in the Model.py file will be generated as tables in your database
+Which you have mentioned in the SQLAlchemy_Database_URI..
