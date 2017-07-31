@@ -15,6 +15,7 @@ manager = Manager(app)
 
 manager.add_command('db', MigrateCommand)
 
+#Table user for database
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20))
@@ -22,6 +23,7 @@ class User(db.Model):
     unites = db.Column(db.String(3))
     workouts = db.relationship('Workout', backref='user', lazy='dynamic')
 
+#Table Workout for database
 class Workout(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.DateTime)
@@ -29,18 +31,21 @@ class Workout(db.Model):
     notes = db.Column(db.Text)
     bodyweight = db.Column(db.Numeric)
     exercises = db.relationship('Exercises', backref='workout', lazy='dynamic')
-
+	
+#Table Exercises for database
 class Exercises(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))
-
+	
+#Table Exercise for database
 class Exercise(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     workout_id  =db.Column(db.Integer, db.ForeignKey('workout.id'))
     order = db.Column(db.Integer, unique=True)
     exercise_id = db.Column(db.Integer, db.ForeignKey('exercise.id'))
     sets = db.relationship('Set', backref='exercise', lazy='dynamic')
-
+	
+#Table Set for database
 class Set(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     oder = db.Column(db.Integer , unique=True)
