@@ -4,6 +4,7 @@ from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
 
 
+#Initializes the flask app
 app = Flask(__name__)
 app.config.from_pyfile('config.cfg')
 app.config['SQLALCHEMY_DATABASE_URI'] ='mysql://addherbs:hahahehe@mydb.cicid6gi032j.us-east-2.rds.amazonaws.com/workout'
