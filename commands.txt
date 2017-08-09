@@ -1,9 +1,11 @@
+
+# libraries to install(Packages)
 pip install flask
 pip install flask_migrate
 pip install flask_script
 pip install flask_sqlalchemy
 
-
+# How to import modules
 python model.py db init
 python model.py db migrate
 python model.py db upgrade
