@@ -11,6 +11,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] ='mysql://addherbs:hahahehe@mydb.cicid6gi0
 db = SQLAlchemy(app)
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+
+# This is a migrate module used to migrate a database and do changes in a structure of a database
+# We dont have to delete old and create a new database. The changes will automatically mapped into the database
 migrate = Migrate(app, db)
 manager = Manager(app)
 
